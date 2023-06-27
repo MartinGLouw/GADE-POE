@@ -8,8 +8,12 @@ public class PrefabSpawner : MonoBehaviour
     public GameObject player; // reference to player game object
     public GameObject prefab; // prefab to spawn
     public GameObject prefab2;
+    public GameObject iceprefab; // prefab to spawn
+    public GameObject iceprefab2;
+    public GameObject iceprefab3;
     public GameObject prefab3;
     public GameObject Floor;
+    public GameObject iceFloor;
     public GameObject Pickup1;
     public GameObject Pickup2;
     public GameObject Pickup3;
@@ -22,6 +26,8 @@ public class PrefabSpawner : MonoBehaviour
     private float PosXPickup;
     private float timeSinceLastSpawnPickup;
     private float timeSinceStart;
+    private float levelOneTime;
+    private float levelTwoTime;
     public bool touched;
 
     public float FloorDistance = 150f;
@@ -49,6 +55,7 @@ public class PrefabSpawner : MonoBehaviour
         {
             if (timeSinceStart < 90f)
             {
+                
                 //setting the spawn position out of three possible positions
                 var RandNum = Random.Range(1, 4);
                 if (RandNum == 1) PosX = -5;
@@ -100,6 +107,7 @@ public class PrefabSpawner : MonoBehaviour
                         timeSinceLastSpawn = 0f;
                     }
                 }
+                
             }
 
 
@@ -141,7 +149,7 @@ public class PrefabSpawner : MonoBehaviour
                 }
             }
 
-            if (timeSinceStart > 140f)
+            if (timeSinceStart > 140f && timeSinceStart < 230)
             {
                 //setting the spawn position out of three possible positions
                 var RandNum = Random.Range(1, 4);
@@ -155,7 +163,7 @@ public class PrefabSpawner : MonoBehaviour
                         // Calculate the position to spawn the prefab
                         var position = new Vector3(PosX, 0.6f, player.transform.position.z + spawnDistance);
                         // Spawn the prefab
-                        Instantiate(prefab, position, Quaternion.identity);
+                        Instantiate(iceprefab, position, Quaternion.identity);
                         // Update the list of other prefab positions
                         otherPrefabPositions.Add(position);
                         // Reset time since last spawn
@@ -167,7 +175,7 @@ public class PrefabSpawner : MonoBehaviour
                         // Calculate the position to spawn the prefab
                         var position = new Vector3(PosX, 1, player.transform.position.z + spawnDistance);
                         // Spawn the prefab
-                        Instantiate(prefab3, position: position, Quaternion.identity);
+                        Instantiate(iceprefab3, position: position, Quaternion.identity);
                         // Update the list of other prefab positions
                         otherPrefabPositions.Add(position);
                         // Reset time since last spawn
@@ -178,7 +186,7 @@ public class PrefabSpawner : MonoBehaviour
                         // Calculate the position to spawn the prefab
                         var position = new Vector3(PosX, 1, player.transform.position.z + spawnDistance);
                         // Spawn the prefab
-                        Instantiate(prefab2, position, Quaternion.identity);
+                        Instantiate(iceprefab2, position, Quaternion.identity);
                         // Update the list of other prefab positions
                         otherPrefabPositions.Add(position);
                         // Reset time since lastspawn
@@ -230,6 +238,13 @@ public class PrefabSpawner : MonoBehaviour
                         timeSinceLastSpawnPickup = 0f;
                     }
                 }
+
+                
+            }
+            if (timeSinceStart >= 280f)
+            {
+                timeSinceStart = 0f;
+                Debug.Log(timeSinceStart + "dsfjsofjiosdsdoifj");
             }
         }
     }
@@ -243,10 +258,19 @@ public class PrefabSpawner : MonoBehaviour
             var position = new Vector3(0, -0.6f, player.transform.position.z + FloorDistance);
 
             // Log the value of position
-
-            // Spawn the floor prefab
-            Instantiate(Floor, position, Quaternion.identity);
-            touched = true;
+            if (timeSinceStart <= 140f)
+            {
+                // Spawn the floor prefab
+                Instantiate(Floor, position, Quaternion.identity);
+                touched = true; 
+            }
+            else
+            {
+                // Spawn the floor prefab
+                Instantiate(iceFloor, position, Quaternion.identity);
+                touched = true;     
+            }
+            
         }
     }
 

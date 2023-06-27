@@ -1,15 +1,15 @@
 using System.Collections;
 using UnityEngine;
 
-public class BossSpawn : MonoBehaviour
+public class Boss2Spawn : MonoBehaviour
 {
     public GameObject prefab;
     public Transform player;
-    public float spawnDelay = 90f;
+    public float spawnDelay = 230f;
     public float riseSpeed = 1f;
     public float maxHeight = 5f;
 
-    // set the initial spawn delay to 90 seconds
+     
 
     private IEnumerator Start()
     {
@@ -19,7 +19,7 @@ public class BossSpawn : MonoBehaviour
 
             Vector3 spawnPosition = player.position + player.forward;
             GameObject instance = Instantiate(prefab, spawnPosition, Quaternion.identity);
-            Destroy(instance, 50f); // destroy the boss after 50 seconds
+            Destroy(instance, 30f); // destroy the boss after 50 seconds
 
             while (instance.transform.position.y < maxHeight)
             {

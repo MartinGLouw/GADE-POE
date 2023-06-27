@@ -38,11 +38,13 @@ public class PlayerController : MonoBehaviour
     private bool speedIncreased = false; // variable to keep track of whether the speed has increased
 
     private bool canSpeedUp = true; // variable to control whether the player can speed up
+    public float timePassedNum = 0f;
 
     void Update()
     {
         timeSinceStart += Time.deltaTime;
-        TimePassed.text = "Time Passed: " + timeSinceStart.ToString("F1");
+        timePassedNum += Time.deltaTime;
+        TimePassed.text = "Time Passed: " + timePassedNum.ToString("F1");
         if (timeSinceStart >= speedIncreaseDelay && canSpeedUp)
         {
             // Set a maximum value for moveSpeed and forwardMoveSpeed
@@ -68,6 +70,12 @@ public class PlayerController : MonoBehaviour
                 speedIncreased = false;
                 canSpeedUp = false; // prevent the player from speeding up again
             }
+        }
+
+        if (timeSinceStart >= 280f)
+        {
+            canSpeedUp = true;
+            timeSinceStart = 0f;
         }
     
     

@@ -268,6 +268,8 @@ GameObject:
   m_Component:
   - component: {fileID: 172273474}
   - component: {fileID: 172273475}
+  - component: {fileID: 172273476}
+  - component: {fileID: 172273477}
   m_Layer: 0
   m_Name: SceneManager
   m_TagString: Untagged
@@ -302,6 +304,41 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 65ba7b7eea8142a4287821559ebd7c1f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &172273476
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 172273473}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 81dc05bf58d12c549898b52593814267, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 2081551903}
+  obstaclePrefab: {fileID: 8150242288868475147, guid: 31b5713d3b7d96548ace773574b83db6, type: 3}
+  spawnDistance: 100
+  spawnInterval: 1
+  timeSinceStart: 0
+  spawnDelay: 240
+--- !u!114 &172273477
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 172273473}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8a765c22fc91eee4bacbb29e73da0a99, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  prefab: {fileID: 7000341521124450189, guid: 0de2c35c155c06b49a688dd74b0fbccf, type: 3}
+  player: {fileID: 2081551914}
+  spawnDelay: 230
+  riseSpeed: 1
+  maxHeight: 5
 --- !u!1 &396023148
 GameObject:
   m_ObjectHideFlags: 0
@@ -1589,6 +1626,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 2388119399535093449, guid: be8fd159da6b48441b4433508f1943bc, type: 3}
     - target: {fileID: 3900189891735982104, guid: 3598ec195026ba545ba093eedc6b8022, type: 3}
+      propertyPath: prefab
+      value: 
+      objectReference: {fileID: 5572151838559358085, guid: 6aa290d991195df44a828198932da73b, type: 3}
+    - target: {fileID: 3900189891735982104, guid: 3598ec195026ba545ba093eedc6b8022, type: 3}
       propertyPath: Pickup1
       value: 
       objectReference: {fileID: 3247333147290966906, guid: 2b1900b58d5e30243874706069ee7dc0, type: 3}
@@ -1600,6 +1641,26 @@ PrefabInstance:
       propertyPath: Pickup3
       value: 
       objectReference: {fileID: 3247333147290966906, guid: 479860e8d71c8eb4fb02edd12d4684e3, type: 3}
+    - target: {fileID: 3900189891735982104, guid: 3598ec195026ba545ba093eedc6b8022, type: 3}
+      propertyPath: prefab2
+      value: 
+      objectReference: {fileID: 8150242288868475147, guid: fcdecabd2bc0f7d4bb0e57bc6c2e4232, type: 3}
+    - target: {fileID: 3900189891735982104, guid: 3598ec195026ba545ba093eedc6b8022, type: 3}
+      propertyPath: iceFloor
+      value: 
+      objectReference: {fileID: 2388119399535093449, guid: 4b9634634cd3eb74b82a832fdeccafb4, type: 3}
+    - target: {fileID: 3900189891735982104, guid: 3598ec195026ba545ba093eedc6b8022, type: 3}
+      propertyPath: iceprefab
+      value: 
+      objectReference: {fileID: 5572151838559358085, guid: 600528b1fd5681d4786297d49d3e3dd8, type: 3}
+    - target: {fileID: 3900189891735982104, guid: 3598ec195026ba545ba093eedc6b8022, type: 3}
+      propertyPath: iceprefab2
+      value: 
+      objectReference: {fileID: 8150242288868475147, guid: 9d8b9ac8b5d43eb4dbcffb9d346bb559, type: 3}
+    - target: {fileID: 3900189891735982104, guid: 3598ec195026ba545ba093eedc6b8022, type: 3}
+      propertyPath: iceprefab3
+      value: 
+      objectReference: {fileID: 8734036181257817750, guid: 7220da6cc68c0be42b9e71675b97fc2b, type: 3}
     - target: {fileID: 3900189891735982104, guid: 3598ec195026ba545ba093eedc6b8022, type: 3}
       propertyPath: spawnIntervalForPickup
       value: 23
