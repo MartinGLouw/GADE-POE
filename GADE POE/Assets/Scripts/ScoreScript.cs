@@ -1,9 +1,10 @@
+using System;
 using System.Collections;
 using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
 
-public class ScoreScript : MonoBehaviour
+public class ScoreScript : GameEvents
 {
     public static float score; //score variable
     public TextMeshProUGUI scoreText; //score ui object
@@ -15,7 +16,14 @@ public class ScoreScript : MonoBehaviour
     private bool touched;
     public void Start()
     {
+        
         scoreText.text = "Score: " + score; // displays the text on ui
+        BossScore();
+    }
+
+    public void Update()
+    {
+        BossScore();
     }
 
     void OnTriggerEnter(Collider other) //checks when entering a collider
@@ -39,7 +47,7 @@ public class ScoreScript : MonoBehaviour
             touched = true;
         }
 
-        if (other.gameObject.CompareTag("Double")&&!touched) //if collider is Double it will add another score
+        if (other.gameObject.CompareTag("Double")) //if collider is Double it will add another score
         {
             if (doublePointsActive)
             {
