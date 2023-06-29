@@ -1,10 +1,12 @@
 using System;
 using System.IO;
+using TMPro;
 using UnityEngine;
 
 public class DataBase : MonoBehaviour
 {
     public ScoreScript scoreScript;
+    public TextMeshProUGUI playerDataText;
     private static string filePath;
 
     private void Start()
@@ -50,5 +52,21 @@ public class DataBase : MonoBehaviour
         // Write updated data to file
         File.WriteAllLines(filePath, lines);
     }
-    
+
+    public void LoadAllPlayerData()
+    {
+        // Read data from file
+        string[] lines = File.ReadAllLines(filePath);
+
+        // Parse player data
+        string text = "";
+        for (int i = 0; i < lines.Length; i++)
+        {
+            string[] values = lines[i].Split(',');
+            text += "Name: " + values[0] + "\nScore: " + values[1] + "\n\n";
+        }
+
+        // Update TextMeshPro text
+        playerDataText.text = text;
+    }
 }
