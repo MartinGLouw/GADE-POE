@@ -9,7 +9,9 @@
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Boss2.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/DataBase.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/GameEvents.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/InputName.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/ObstacleMove.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/ObstacleRotator.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
@@ -93,6 +95,7 @@
       <updated>1687862348012</updated>
       <workItem from="1687862353018" duration="14939000" />
       <workItem from="1688027240481" duration="6642000" />
+      <workItem from="1688042214124" duration="6666000" />
     </task>
     <servers />
   </component>

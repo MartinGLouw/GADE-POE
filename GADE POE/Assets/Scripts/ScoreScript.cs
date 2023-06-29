@@ -6,6 +6,7 @@ using UnityEngine.UI;
 
 public class ScoreScript : GameEvents
 {
+    [SerializeField]
     public static float score; //score variable
     public TextMeshProUGUI scoreText; //score ui object
     private bool doublePointsActive = false; //flag to check if double points are active
@@ -14,6 +15,7 @@ public class ScoreScript : GameEvents
     public TextMeshProUGUI timerText; // Assign the TextMeshProUGUI in the Inspector
     private Coroutine doublePointsCoroutine; // Reference to the current DoublePoints coroutine
     private bool touched;
+    public static int scoreStore;
     public void Start()
     {
         
@@ -23,6 +25,7 @@ public class ScoreScript : GameEvents
 
     public void Update()
     {
+        scoreStore = Convert.ToInt32(score);
         BossScore();
     }
 

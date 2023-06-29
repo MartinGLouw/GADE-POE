@@ -272,6 +272,7 @@ GameObject:
   - component: {fileID: 172273477}
   - component: {fileID: 172273480}
   - component: {fileID: 172273481}
+  - component: {fileID: 172273482}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -376,6 +377,24 @@ MonoBehaviour:
   player: {fileID: 2081551914}
   riseSpeed: 1
   maxHeight: 5
+--- !u!114 &172273482
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 172273473}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b7c6618c9c36d648af34ebc3cd5b20d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timeSinceStart: 0
+  Bossscore: 0
+  scoreText: {fileID: 0}
+  image: {fileID: 0}
+  timerText: {fileID: 0}
+  InputName: {fileID: 0}
 --- !u!1 &396023148
 GameObject:
   m_ObjectHideFlags: 0

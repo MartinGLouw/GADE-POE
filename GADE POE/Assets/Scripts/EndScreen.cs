@@ -1,19 +1,18 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class EndScreen : MonoBehaviour
+public class EndScreen : DataBase
 {
-        [SerializeField] private string nextSceneName;
+    [SerializeField] private string nextSceneName;
+    
 
-        private void OnCollisionEnter(Collision collision)//detects when player collides to end game and to go to end game scene
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.CompareTag("Player"))
         {
-                if (collision.gameObject.CompareTag("Player"))
-                {
-                        SceneManager.LoadScene(nextSceneName);
-                }
-        }
+            DataBase.SavePlayerData();
+            SceneManager.LoadScene(nextSceneName);
 
+        }
+    }
 }
