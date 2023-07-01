@@ -37,7 +37,7 @@ public class Boss2Spawn : MonoBehaviour
 
         if (timeSinceStart >= 230f && !hasSpawned)
         {
-            StartCoroutine(SpawnBoss());
+            GameEvents2.current.Boss2Spawn();
             hasSpawned = true;
         }
 
@@ -46,5 +46,20 @@ public class Boss2Spawn : MonoBehaviour
             timeSinceStart = 0f;
             hasSpawned = false;
         }
+    }
+
+    private void OnEnable()
+    {
+        GameEvents2.current.onBoss2Spawn += OnBoss2Spawn;
+    }
+
+    private void OnDisable()
+    {
+        GameEvents2.current.onBoss2Spawn -= OnBoss2Spawn;
+    }
+
+    private void OnBoss2Spawn()
+    {
+        StartCoroutine(SpawnBoss());
     }
 }

@@ -6,6 +6,6 @@ public class Restart : MonoBehaviour
     public void ReloadScene()//to restart scene
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
-        
+        Time.timeScale = 1f;
     }
 }

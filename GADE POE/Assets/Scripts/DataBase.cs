@@ -14,10 +14,15 @@ public class DataBase : MonoBehaviour
         filePath = "C:/Users/marti/Documents/Year2 vega/GameDev/GADE-POE/GADE POE/playerdata.txt";
     }
 
+    private void Update()
+    {
+        filePath = "C:/Users/marti/Documents/Year2 vega/GameDev/GADE-POE/GADE POE/playerdata.txt";
+    }
+
     public static void SavePlayerData()
     {
         string name = InputName.Name;
-        int score = ScoreScript.scoreStore;
+        int score = ScoreScript.ScoreStore;
 
         // Read data from file
         string[] lines = File.ReadAllLines(filePath);

@@ -13,6 +13,7 @@ public class BossSpawn : MonoBehaviour
 
     private IEnumerator SpawnBoss()
     {
+        
         Vector3 spawnPosition = player.position + player.forward;
         GameObject instance = Instantiate(prefab, spawnPosition, Quaternion.identity);
         Destroy(instance, 50f); // destroy the boss after 50 seconds
@@ -33,11 +34,13 @@ public class BossSpawn : MonoBehaviour
 
     void Update()
     {
+        
         timeSinceStart += Time.deltaTime;
 
         if (timeSinceStart >= 90f && !hasSpawned)
         {
-            StartCoroutine(SpawnBoss());
+            Debug.Log("ggggggggggggggggggggggggggggggggggggggggggggggg");
+            GameEvents2.current.BossSpawn();
             hasSpawned = true;
         }
 
@@ -47,4 +50,19 @@ public class BossSpawn : MonoBehaviour
             hasSpawned = false;
         }
     }
+
+    private void OnEnable()
+    {
+        GameEvents2.current.onBossSpawn += OnBossSpawn;
+    }
+
+    private void OnDisable()
+    {
+        GameEvents2.current.onBossSpawn -= OnBossSpawn;
+    }
+
+    private void OnBossSpawn()
+    {
+        StartCoroutine(SpawnBoss());
+   }
 }
