@@ -71,10 +71,12 @@ public class ScoreScript : MonoBehaviour
     {
         if (doublePointsActive)
         {
+            
             score += 2f;
         }
         else
         {
+            
             score += 1f;
         }
       
@@ -88,11 +90,12 @@ public class ScoreScript : MonoBehaviour
     {
         if (doublePointsActive)
         {
-            score += 2f;
+            score += 4f;
         }
         else
         {
-            score += 1f;
+           
+            score += 2f;
         }
         
         if (scoreText != null)

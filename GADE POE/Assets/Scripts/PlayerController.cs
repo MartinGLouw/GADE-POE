@@ -24,6 +24,12 @@ public class PlayerController : MonoBehaviour
     public TextMeshProUGUI TimePassed;
     public RawImage image; // Assign the RawImage in the Inspector
     public Animator animator;
+    public AudioSource Jump;
+
+    private void Start()
+    {
+        Jump = GetComponent<AudioSource>();
+    }
 
     void FixedUpdate()
     {
@@ -97,7 +103,7 @@ public class PlayerController : MonoBehaviour
         if (Input.GetButtonDown("Jump") && !isJumping)
         {
             gameObject.GetComponent<Rigidbody>().AddForce(new Vector3(0, jumpForce, 0), ForceMode.Impulse);
-            
+            Jump.Play();
             isJumping = true;
             animator = GetComponent<Animator>();
             

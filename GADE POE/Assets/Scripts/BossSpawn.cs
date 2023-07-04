@@ -39,7 +39,6 @@ public class BossSpawn : MonoBehaviour
 
         if (timeSinceStart >= 90f && !hasSpawned)
         {
-            Debug.Log("ggggggggggggggggggggggggggggggggggggggggggggggg");
             GameEvents2.current.BossSpawn();
             hasSpawned = true;
         }

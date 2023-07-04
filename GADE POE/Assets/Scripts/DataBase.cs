@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using System.IO;
 using TMPro;
 using UnityEngine;
@@ -64,14 +65,23 @@ public class DataBase : MonoBehaviour
         string[] lines = File.ReadAllLines(filePath);
 
         // Parse player data
-        string text = "";
+        List<Tuple<string, int>> playerData = new List<Tuple<string, int>>();
         for (int i = 0; i < lines.Length; i++)
         {
             string[] values = lines[i].Split(',');
-            text += "Name: " + values[0] + "\nScore: " + values[1] + "\n\n";
+            playerData.Add(new Tuple<string, int>(values[0], int.Parse(values[1])));
         }
 
+        // Sort player data by score in descending order
+        playerData.Sort((x, y) => y.Item2.CompareTo(x.Item2));
+
         // Update TextMeshPro text
+        string text = "";
+        foreach (var data in playerData)
+        {
+            text += "Name: " + data.Item1 + "\nScore: " + data.Item2 + "\n\n";
+        }
         playerDataText.text = text;
     }
+
 }

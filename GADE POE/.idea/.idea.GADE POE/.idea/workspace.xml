@@ -16,9 +16,11 @@
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/ObstacleMove.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/ObstacleRotator.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/PauseMenu.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/PickupSound.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/PlayerCollision.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/UIScript.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.ugui@1.0.0/Runtime/UI/Core/ScrollRect.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/../../Project Part 1/GADE_PART2_PREHISTORIC/Project Files/Assets/Scripts/ScoreScript.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../../GameJam/GADS-Part-3/Actual/GADS-PART-3-POE/Assets/Scripts/PauseMenu.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="MarkdownSettingsMigration">
@@ -104,6 +106,7 @@
       <workItem from="1688042214124" duration="9027000" />
       <workItem from="1688053149949" duration="71000" />
       <workItem from="1688203094628" duration="7162000" />
+      <workItem from="1688464755933" duration="8076000" />
     </task>
     <servers />
   </component>
