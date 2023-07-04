@@ -12,12 +12,22 @@ public class DataBase : MonoBehaviour
 
     private void Start()
     {
-        filePath = "C:/Users/marti/Documents/Year2 vega/GameDev/GADE-POE/GADE POE/playerdata.txt";
+        var fileName = "playerdata.txt";
+#if UNITY_EDITOR
+        filePath = Application.dataPath + "/" + fileName;
+#else
+        filePath = Application.dataPath + "/../" + fileName;
+#endif
     }
 
     private void Update()
     {
-        filePath = "C:/Users/marti/Documents/Year2 vega/GameDev/GADE-POE/GADE POE/playerdata.txt";
+        var fileName = "playerdata.txt";
+#if UNITY_EDITOR
+        filePath = Application.dataPath + "/" + fileName;
+#else
+        filePath = Application.dataPath + "/../" + fileName;
+#endif
     }
 
     public static void SavePlayerData()

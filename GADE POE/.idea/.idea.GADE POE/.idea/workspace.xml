@@ -49,7 +49,7 @@
 }</component>
   <component name="RunManager" selected="Attach to Unity Editor.Attach to Unity Editor">
     <configuration name="Standalone Player" type="RunUnityExe" factoryName="Unity Executable">
-      <option name="EXE_PATH" value="$PROJECT_DIR$/../../Project Part 1/GADE_Project-1/Prehistoric Run Part 2\GADE_PART1.exe" />
+      <option name="EXE_PATH" value="$PROJECT_DIR$/Build Game\GADE_PART1.exe" />
       <option name="PROGRAM_PARAMETERS" value="" />
       <option name="WORKING_DIRECTORY" value="C:\Users\marti\Documents\Year2 vega\GameDev\Project Part 1\GADE_Project-1\Prehistoric Run Part 2" />
       <option name="PASS_PARENT_ENVS" value="1" />
@@ -106,7 +106,8 @@
       <workItem from="1688042214124" duration="9027000" />
       <workItem from="1688053149949" duration="71000" />
       <workItem from="1688203094628" duration="7162000" />
-      <workItem from="1688464755933" duration="8076000" />
+      <workItem from="1688464755933" duration="8327000" />
+      <workItem from="1688494115573" duration="493000" />
     </task>
     <servers />
   </component>
