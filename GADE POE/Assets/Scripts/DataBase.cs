@@ -9,15 +9,34 @@ public class DataBase : MonoBehaviour
     public ScoreScript scoreScript;
     public TextMeshProUGUI playerDataText;
     private static string filePath;
+    
+    
+        public static DataBase Instance { get; private set; }
+
+        private void Awake()
+        {
+            if (Instance == null)
+            {
+                Instance = this;
+                DontDestroyOnLoad(gameObject);
+            }
+            else
+            {
+                Destroy(gameObject);
+            }
+        }
+
+        
+    
 
     private void Start()
     {
         var fileName = "playerdata.txt";
-#if UNITY_EDITOR
+    #if UNITY_EDITOR
         filePath = Application.dataPath + "/" + fileName;
-#else
+    #else
         filePath = Application.dataPath + "/../" + fileName;
-#endif
+    #endif
     }
 
     private void Update()
@@ -25,9 +44,9 @@ public class DataBase : MonoBehaviour
         var fileName = "playerdata.txt";
 #if UNITY_EDITOR
         filePath = Application.dataPath + "/" + fileName;
-#else
+    #else
         filePath = Application.dataPath + "/../" + fileName;
-#endif
+    #endif
     }
 
     public static void SavePlayerData()
