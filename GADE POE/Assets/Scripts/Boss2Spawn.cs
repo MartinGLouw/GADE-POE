@@ -20,13 +20,13 @@ public class Boss2Spawn : MonoBehaviour
         while (instance.transform.position.y < maxHeight)
         {
             instance.transform.position += Vector3.up * riseSpeed * Time.deltaTime;
-            instance.transform.position = new Vector3(0, instance.transform.position.y, player.position.z + 60);
+            instance.transform.position = new Vector3(0, instance.transform.position.y, player.position.z + 65);
             yield return null;
         }
 
         while (instance != null)
         {
-            instance.transform.position = new Vector3(0, instance.transform.position.y, player.position.z + 60);
+            instance.transform.position = new Vector3(0, instance.transform.position.y, player.position.z + 65);
             yield return null;
         }
     }

@@ -11,25 +11,12 @@ public class DataBase : MonoBehaviour
     private static string filePath;
     
     
-        public static DataBase Instance { get; private set; }
-
-        private void Awake()
-        {
-            if (Instance == null)
-            {
-                Instance = this;
-                DontDestroyOnLoad(gameObject);
-            }
-            else
-            {
-                Destroy(gameObject);
-            }
-        }
+        
 
         
     
 
-    private void Start()
+    private void Awake()
     {
         var fileName = "playerdata.txt";
     #if UNITY_EDITOR

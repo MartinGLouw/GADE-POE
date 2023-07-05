@@ -5,3 +5,5 @@ Test Score,173
 ,36
 Test score,20
 Help,33
+,6
+,18

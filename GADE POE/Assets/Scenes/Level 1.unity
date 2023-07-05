@@ -615,7 +615,7 @@ MonoBehaviour:
   prefab: {fileID: 7000341521124450189, guid: 0de2c35c155c06b49a688dd74b0fbccf, type: 3}
   player: {fileID: 2081551914}
   riseSpeed: 1
-  maxHeight: 5
+  maxHeight: 4.5
 --- !u!114 &172273480
 MonoBehaviour:
   m_ObjectHideFlags: 0
